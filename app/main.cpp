@@ -2,7 +2,7 @@
 #include <QApplication>
 #include <QDir>
 #include <QPluginLoader>
-#include <QQmlApplicationEngine>
+#include <QQuickView>
 
 bool loadPlugin(void)
 {
@@ -26,11 +26,12 @@ bool loadPlugin(void)
 int main(int argv, char* args[])
 {
     QApplication app(argv, args);
-    QQmlApplicationEngine engine;
+    QQuickView viewer;
 
     loadPlugin();
 
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    viewer.setSource(QUrl("qrc:/main.qml"));
+    viewer.show();
 
     return app.exec();
 }

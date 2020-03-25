@@ -1,4 +1,4 @@
-find_package(Qt5 COMPONENTS Core Gui Qml Widgets QuickCompiler REQUIRED)
+find_package(Qt5 COMPONENTS Core Gui Qml Quick Widgets QuickCompiler REQUIRED)
 
 add_executable(app)
 
@@ -19,4 +19,5 @@ target_link_libraries(app
     Qt5::Gui
     Qt5::Widgets
     Qt5::Qml
+    Qt5::Quick
     )
