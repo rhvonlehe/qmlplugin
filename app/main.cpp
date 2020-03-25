@@ -1,7 +1,8 @@
+#include <PluginIf.h>
 #include <QApplication>
 #include <QDir>
 #include <QPluginLoader>
-#include <PluginIf.h>
+#include <QQmlApplicationEngine>
 
 bool loadPlugin(void)
 {
@@ -25,8 +26,11 @@ bool loadPlugin(void)
 int main(int argv, char* args[])
 {
     QApplication app(argv, args);
+    QQmlApplicationEngine engine;
 
     loadPlugin();
+
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     return app.exec();
 }
