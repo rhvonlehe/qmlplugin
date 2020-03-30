@@ -8,6 +8,8 @@ Rectangle {
     Loader
     {
         id: mainLoader
+        anchors.verticalCenter: main.verticalCenter
         source: "qrc:/hello.qml"
     }
+
 }

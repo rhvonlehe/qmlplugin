@@ -3,6 +3,7 @@
 #include <QDir>
 #include <QPluginLoader>
 #include <QQuickView>
+#include <QDirIterator>
 
 bool loadPlugin(void)
 {
@@ -25,13 +26,20 @@ bool loadPlugin(void)
 
 int main(int argv, char* args[])
 {
-    QApplication app(argv, args);
+    QGuiApplication app(argv, args);
     QQuickView viewer;
 
     loadPlugin();
 
     viewer.setSource(QUrl("qrc:/main.qml"));
     viewer.show();
+
+    // TEMP: enumerate all files in resource system: //RHV REMOVE
+    QDirIterator it(":", QDirIterator::Subdirectories);
+    while (it.hasNext()) {
+        qDebug() << it.next();
+    }
+
 
     return app.exec();
 }
