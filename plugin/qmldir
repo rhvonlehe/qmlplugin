@@ -1,3 +1,3 @@
 module org.example.PluginInterface 
-plugin plugin.dll
-singleton MySingleton 1.0 MySingleton.qml
+plugin plugin
+singleton MySingleton 1.0 qrc:/MySingleton.qml
