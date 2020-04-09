@@ -1,5 +1,6 @@
 pragma Singleton
 import QtQuick 2.0
+import "."
 
 Item {
     readonly property int value1: 1

@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import "."
+import org.example.PluginInterface 1.0
 
 Rectangle {
     id: page
