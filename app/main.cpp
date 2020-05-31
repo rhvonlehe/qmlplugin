@@ -24,9 +24,9 @@ bool loadPlugin(void)
     return false;
 }
 
-int main(int argv, char* args[])
+int main(int argc, char* argv[])
 {
-    QGuiApplication app(argv, args);
+    QGuiApplication app(argc, argv);
     QQuickView viewer;
 
     loadPlugin();
